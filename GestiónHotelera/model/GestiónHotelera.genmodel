@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/GestiónHotelera/src-gen" creationIcons="false"
+    editDirectory="/GestiónHotelera.edit/src-gen" editorDirectory="/GestiónHotelera.editor/src-gen"
+    modelPluginID="GestinHotelera" modelName="GestiónHotelera" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>GestiónHotelera.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="GestiónHotelera" disposableProviderFactory="true" ecorePackage="GestiónHotelera.ecore#/">
+    <genClasses ecoreClass="GestiónHotelera.ecore#//Hotel">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Hotel/habitación"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Hotel/reserva"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Hotel/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Hotel/calificacion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Hotel/dirección"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Hotel/descripción"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Hotel/empleado"/>
+    </genClasses>
+    <genClasses ecoreClass="GestiónHotelera.ecore#//Habitación">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Habitación/hotel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Habitación/reserva"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Habitación/puerta"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Habitación/piso"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Habitación/string"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Habitación/numero_camas"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Habitación/coste"/>
+    </genClasses>
+    <genClasses ecoreClass="GestiónHotelera.ecore#//Reserva">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Reserva/hotel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Reserva/habitación"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Reserva/residente"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Reserva/fecha_inicio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Reserva/fecha_fin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Reserva/coste_final"/>
+    </genClasses>
+    <genClasses ecoreClass="GestiónHotelera.ecore#//Persona">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Persona/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Persona/dni"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Persona/telefono"/>
+    </genClasses>
+    <genClasses ecoreClass="GestiónHotelera.ecore#//Residente">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Residente/reserva"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Residente/correo"/>
+    </genClasses>
+    <genClasses ecoreClass="GestiónHotelera.ecore#//Empleado">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Empleado/salario"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GestiónHotelera.ecore#//Empleado/cargo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GestiónHotelera.ecore#//Empleado/hotel"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

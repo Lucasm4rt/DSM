@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="GestiónHotelera" nsURI="http://DSM/lmarmar6/GestiónHotelera"
+    nsPrefix="gestiónhotelera">
+  <eClassifiers xsi:type="ecore:EClass" name="Hotel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="habitación" lowerBound="1"
+        upperBound="-1" eType="#//Habitación" containment="true" eOpposite="#//Habitación/hotel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reserva" upperBound="-1"
+        eType="#//Reserva" containment="true" eOpposite="#//Reserva/hotel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="calificacion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirección" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripción" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="empleado" upperBound="-1"
+        eType="#//Empleado" containment="true" eOpposite="#//Empleado/hotel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Habitación">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hotel" eType="#//Hotel"
+        eOpposite="#//Hotel/habitación"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reserva" eType="#//Reserva"
+        eOpposite="#//Reserva/habitación"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="puerta" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="piso" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numero_camas" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coste" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reserva">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hotel" eType="#//Hotel"
+        eOpposite="#//Hotel/reserva"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="habitación" eType="#//Habitación"
+        eOpposite="#//Habitación/reserva"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="residente" eType="#//Residente"
+        containment="true" eOpposite="#//Residente/reserva"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fecha_inicio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fecha_fin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coste_final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Persona" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dni" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="telefono" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Residente" eSuperTypes="#//Persona">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reserva" eType="#//Reserva"
+        eOpposite="#//Reserva/residente"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="correo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Empleado" eSuperTypes="#//Persona">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="salario" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cargo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hotel" eType="#//Hotel"
+        eOpposite="#//Hotel/empleado"/>
+  </eClassifiers>
+</ecore:EPackage>
