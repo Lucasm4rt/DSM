@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<practica2:Aplicación
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:practica2="http://DSM/lmarmar6/practica2"
+    xsi:schemaLocation="http://DSM/lmarmar6/practica2 Practica2.ecore"
+    nombre="Amazon">
+  <ventana nombre="Principal"/>
+  <ventana nombre="Secundaria"/>
+  <ventana nombre="Carrito"/>
+</practica2:Aplicación>

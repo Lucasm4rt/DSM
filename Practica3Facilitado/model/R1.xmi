@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<practica3facilitado:Aplicacion
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:practica3facilitado="http://DSM/pcarsi/practica3facilitado"
+    xsi:schemaLocation="http://DSM/pcarsi/practica3facilitado Practica3.ecore"
+    Nombre="Amazon">
+  <Ventanas
+      Nombre="Principal">
+    <Menus Nombre="MenuPrincipal"
+        Posicion="Arriba">
+      <Elementos_Menu
+          Nombre="Principal"/>
+      <Elementos_Menu
+          Nombre="CompraLibros"/>
+      <Elementos_Menu
+          Nombre="CarritoCompra"/>
+    </Menus>
+  </Ventanas>
+  <Ventanas
+      Nombre="CompraLibros">
+    <Menus Nombre="Principal"
+        Posicion="Arriba">
+      <Elementos_Menu
+          Nombre="Principal"/>
+      <Elementos_Menu
+          Nombre="CompraLibros"/>
+    </Menus>
+  </Ventanas>
+  <Ventanas
+      Nombre="Principal"/>
+</practica3facilitado:Aplicacion>

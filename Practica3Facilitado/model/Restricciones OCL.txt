@@ -1,0 +1,16 @@
+Restricciones OCL implementadas en el metamodelo
+
+
+NombreVentanaUnico : Nombre de ventana unico
+
+invariant NombreVentanaUnico:
+			self.Ventanas->isUnique(Nombre);
+			
+			
+MaxMarco : Número de marcos máximo en 6
+			
+invariant MaxMarco:
+			self.Marcos->size()<=6;
+			
+			
+			
